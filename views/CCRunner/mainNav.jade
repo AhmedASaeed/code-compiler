@@ -1,0 +1,11 @@
+nav.main_nav
+    div.main_nav_brand_title
+        h3.title CCRunner
+    div.main_nav_brand_text
+        p.title Welcome to CCRunner
+    div.main_nav_welcome_text
+        p.title Welcome, #{userInfo.email}
+        input#user_email(type='hidden', value='#{userInfo.email}')
+    div.main_nav_welcome_text
+        form(action='/logout', method='POST')
+            button.btn.btn-primary(type='submit') logout

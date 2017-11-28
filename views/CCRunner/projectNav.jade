@@ -1,0 +1,35 @@
+nav.navbar-right.project_nav
+    div.menu_group
+        div.dropdown
+            button.btn.btn-info.dropdown-toggle.menu_item(type='button', id='directorylist', data-toggle='dropdown', aria-haspopup='true', aria-expanded='true') dir0
+                span.caret
+            ul.dropdown-menu.dropdown-menu-right(aria-labelledby='directorylist')
+                li.dropdown-header select directory
+                li
+                    a(href='#') new..
+                li
+                    a(href='#') dir1
+                li
+                    a(href='#') dir2
+                li
+                    a(href='#') dir3
+        div#codefilelist.list-group
+            div.list-group-item.panel-heading codefiles
+            a.list-group-item(data-toggle='modal', data-target='#create_codefile_modal') new
+
+div#create_codefile_modal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='create_codefile_modal')
+    div.modal-dialog.modal-sm(role='document')
+        div.modal-content
+            div.modal-header
+                h4.modal-title Create new file
+            div.modal-body
+                form#create_codefile_form.form-horizontal.join_form_container
+                    div.form-group
+                        label.sr-only(for="codefile_name") filename
+                        input#codefile_name.form-control(type='text', name='filename', placeholder='filename')
+                    div.form-group
+                        label.sr-only(for='codefile_lang') lang
+                        input#codefile_lang.form-control(type='text', name='lang' placeholder='lang: js / py / c')
+                    div.form-group
+                        button.btn.btn-primary.btn-block(type='button', onclick='javascript:createNewCodeFile()') Create
+                        button.btn.btn-default.btn-block(type='button', data-dismiss='modal') Cancel
